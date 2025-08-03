@@ -1,18 +1,31 @@
-import Image from 'next/image'
-import React from 'react'
-
-const Hero = () => {
+const HeroSection = () => {
   return (
-    <section className='my-6'>
-        <div className='w-full flex flex-col justify-center align-center gap-4'>
-          <Image src="/images/hero.png" alt="Hero" width={500} height={500} className='w-[100%] mx-auto h-[80vh]'/>
-          <div className=''>
-            <h1 className='text-xl font-bold text-primary mb-2'>Ignite Your Fitness</h1>
-            <p className='text-sm text-light'>Transform your body and mind with our expert trainers and state-of-the-art facilities. Join a community dedicated to achieving your fitness goals.</p>
-          </div>
-        </div>
-    </section>
-  )
-}
+    <section className="relative h-[90vh] flex items-center justify-center mt-6">
+      {/* Background Image */}
+      <img
+        src="/images/hero.png"
+        alt="Gym"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-export default Hero
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center text-light px-6 max-w-2xl">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          Ignite Your Fitness Journey
+        </h1>
+        <p className="text-lg md:text-xl mb-6">
+          Transform your body and mind with expert trainers, cutting-edge
+          equipment, and a community that motivates you every day.
+        </p>
+        <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-xl transition duration-300">
+          Join Now
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
